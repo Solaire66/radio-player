@@ -30,7 +30,7 @@ def play_station_vlc(url):
     utilizando la librería VLC. Esta función se ejecuta en un hilo
     separado para no bloquear la interfaz de usuario.
     """
-    global current_player, is_playing
+    global current_player, is_playing # noqa: F824
     try:
         # Asegurarse de que no haya un reproductor activo antes de crear uno nuevo.
         # Esto es más bien una doble verificación, ya que select_and_play() ya llama a stop_playing().
@@ -64,7 +64,7 @@ def play_station_vlc(url):
     except Exception as e:
         # Captura cualquier error durante la inicialización o reproducción de VLC.
         messagebox.showerror("Error de reproducción",
-                             f"No se pudo reproducir la estación. Asegúrate de que la URL sea válida y VLC esté instalado.\nError: {e}")
+                            f"No se pudo reproducir la estación. Asegúrate de que la URL sea válida y VLC esté instalado.\nError: {e}")
         is_playing = False
         status_label.config(text="Detenido")
         current_player = None  # Asegurarse de limpiar el reproductor en caso de error
@@ -76,7 +76,7 @@ def select_and_play():
     Detiene cualquier reproducción existente y luego inicia una nueva
     en un hilo separado para mantener la interfaz de usuario responsiva.
     """
-    global current_player, is_playing
+    global current_player, is_playing # noqa: F824
     selected_name = selected_station.get()
     url = STATIONS.get(selected_name)
 
@@ -101,7 +101,7 @@ def stop_playing():
     """
     Intenta detener la reproducción actual de la estación de radio.
     """
-    global current_player, is_playing
+    global current_player, is_playing # noqa: F824
     if current_player:  # <--- SOLO ENTRA AQUÍ SI HAY UN REPRODUCTOR ACTIVO
         # Si existe un objeto reproductor de VLC, se detiene la reproducción.
         current_player.stop()
