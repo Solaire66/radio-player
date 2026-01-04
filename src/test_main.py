@@ -1,4 +1,3 @@
-import pytest
 from main import STATIONS
 
 # Test 1: Verificar que el diccionario de estaciones no esté vacío

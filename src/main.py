@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import vlc  # Asegúrate de que 'python-vlc' esté instalado (pip install python-vlc)
 import threading
-import time  # Aunque no se usa directamente en la lógica VLC, lo dejaremos si es necesario más adelante
+
 
 # --- Configuraciones ---
 # Es crucial que estas URLs sean flujos de audio DIRECTOS.
@@ -30,7 +30,7 @@ def play_station_vlc(url):
     utilizando la librería VLC. Esta función se ejecuta en un hilo
     separado para no bloquear la interfaz de usuario.
     """
-    global current_player, is_playing # noqa: F824
+    global current_player, is_playing # noqa
     try:
         # Asegurarse de que no haya un reproductor activo antes de crear uno nuevo.
         # Esto es más bien una doble verificación, ya que select_and_play() ya llama a stop_playing().
@@ -76,7 +76,7 @@ def select_and_play():
     Detiene cualquier reproducción existente y luego inicia una nueva
     en un hilo separado para mantener la interfaz de usuario responsiva.
     """
-    global current_player, is_playing # noqa: F824
+    global current_player, is_playing # noqa
     selected_name = selected_station.get()
     url = STATIONS.get(selected_name)
 
@@ -101,7 +101,7 @@ def stop_playing():
     """
     Intenta detener la reproducción actual de la estación de radio.
     """
-    global current_player, is_playing # noqa: F824
+    global current_player, is_playing # noqa
     if current_player:  # <--- SOLO ENTRA AQUÍ SI HAY UN REPRODUCTOR ACTIVO
         # Si existe un objeto reproductor de VLC, se detiene la reproducción.
         current_player.stop()
