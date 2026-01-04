@@ -150,3 +150,9 @@ status_label.pack(pady=10)
 # Iniciar el bucle principal de Tkinter.
 # Esto mantiene la ventana abierta y procesa los eventos de la UI.
 root.mainloop()
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.title("Sintonizador de Radio Simple")
+    # ... resto de tu configuración de la UI ...
+    root.mainloop()
