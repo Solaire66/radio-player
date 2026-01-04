@@ -9,9 +9,9 @@ import time  # Aunque no se usa directamente en la lógica VLC, lo dejaremos si 
 # Las URLs de APIs de streaming a menudo no funcionan directamente.
 STATIONS = {
     "Radio Nuages (Monterrey, MX)": "https://pureplay.cdnstream1.com/6016_64.aac",
-    "La Lupe 105.3 ": "https://25003.live.streamtheworld.com/XHLUPEFM_SC",
-    "Banda 93.3": "https://18813.live.streamtheworld.com/XHQQ_FMAAC.aac",  # Ejemplo de URL que funciona con VLC
-    "Classic 106.9": "https://18743.live.streamtheworld.com/CLASSIC106_SC",
+    "La Lupe 105.3 ": "https://us-b7-i-e-fn1-audio.cdn.mdstrm.com/live-audio-aw/6737993c9422ca09f9b9ea70?aid=579bd29dc99290cf08362c3b&property=radio-garden&pid=nZWv6kTNxPlPCYsrNYhb5V13kc8emJzf&sid=MbLISe3YjfUkjAu7Jda80tPVEKJR2J9V&uid=yTs0H9mUkpXfmJyfDpCY5dn5lNA3NJyL&es=us-b7-i-e-fn1-audio.cdn.mdstrm.com&ote=1767392712264&ot=XkUClrv6wMw74_MEnT6E8A&proto=https&pz=us&cP=128000&awCollectionId=579bd29dc99290cf08362c3b&aw_0_1st.playerId=radio-garden&liveId=6737993c9422ca09f9b9ea70&referer=https%3A%2F%2Fradio.garden%2F&propertyName=radio-garden&propertyType=rss-app&listenerId=yTs0H9mUkpXfmJyfDpCY5dn5lNA3NJyL",
+    "Banda 93.3": "https://14553.live.streamtheworld.com/XHQQ_FMAAC.aac",  # Ejemplo de URL que funciona con VLC
+    "Classic 106.9": "https://us-b7-i-e-fn1-audio.cdn.mdstrm.com/live-audio-aw/673788019b826f0dc1842750?aid=579bd29dc99290cf08362c3b&property=radio-garden&pid=QmbnCjJ8DG3K2XaQwu6JxvVxgNxOvBrm&sid=MbLISe3YjfUkjAu7Jda80tPVEKJR2J9V&uid=yTs0H9mUkpXfmJyfDpCY5dn5lNA3NJyL&es=us-b7-i-e-fn1-audio.cdn.mdstrm.com&ote=1767392551838&ot=MovNSxJ3_qbcUHFoBvB7Wg&proto=https&pz=us&cP=128000&awCollectionId=579bd29dc99290cf08362c3b&aw_0_1st.playerId=radio-garden&liveId=673788019b826f0dc1842750&referer=https%3A%2F%2Fradio.garden%2F&propertyName=radio-garden&propertyType=rss-app&listenerId=yTs0H9mUkpXfmJyfDpCY5dn5lNA3NJyL",
     # Ejemplo m3u8
 }
 
