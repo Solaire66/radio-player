@@ -115,44 +115,43 @@ def stop_playing():
 
 
 # --- Configuración de la Interfaz Gráfica (Tkinter) ---
-root = tk.Tk()
-root.title("Sintonizador de Radio Simple")
-root.geometry("400x300")
-root.resizable(False, False)  # Evita que la ventana se pueda redimensionar
-
-# Etiqueta de título
-title_label = tk.Label(root, text="Selecciona una Estación:", font=("Helvetica", 14, "bold"))
-title_label.pack(pady=10)
-
-# Dropdown para seleccionar estaciones
-station_names = list(STATIONS.keys())
-selected_station = tk.StringVar(root)
-# Establece el valor inicial del dropdown. Si no hay estaciones, muestra un mensaje.
-selected_station.set(station_names[0] if station_names else "No hay estaciones")
-
-station_menu = tk.OptionMenu(root, selected_station, *station_names)
-station_menu.config(width=40, font=("Helvetica", 10))
-station_menu.pack(pady=5)
-
-# Botón Reproducir
-play_button = tk.Button(root, text="Reproducir", command=select_and_play, font=("Helvetica", 12), bg="#4CAF50",
-                        fg="white")
-play_button.pack(pady=10)
-
-# Botón Detener
-stop_button = tk.Button(root, text="Detener", command=stop_playing, font=("Helvetica", 12), bg="#f44336", fg="white")
-stop_button.pack(pady=5)
-
-# Etiqueta de estado
-status_label = tk.Label(root, text="Detenido", font=("Helvetica", 10), fg="blue")
-status_label.pack(pady=10)
-
-# Iniciar el bucle principal de Tkinter.
-# Esto mantiene la ventana abierta y procesa los eventos de la UI.
-root.mainloop()
 
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("Sintonizador de Radio Simple")
-    # ... resto de tu configuración de la UI ...
+    root = tk.Tk()
+    root.title("Sintonizador de Radio Simple")
+    root.geometry("400x300")
+    root.resizable(False, False)  # Evita que la ventana se pueda redimensionar
+
+    # Etiqueta de título
+    title_label = tk.Label(root, text="Selecciona una Estación:", font=("Helvetica", 14, "bold"))
+    title_label.pack(pady=10)
+
+    # Dropdown para seleccionar estaciones
+    station_names = list(STATIONS.keys())
+    selected_station = tk.StringVar(root)
+    # Establece el valor inicial del dropdown. Si no hay estaciones, muestra un mensaje.
+    selected_station.set(station_names[0] if station_names else "No hay estaciones")
+
+    station_menu = tk.OptionMenu(root, selected_station, *station_names)
+    station_menu.config(width=40, font=("Helvetica", 10))
+    station_menu.pack(pady=5)
+
+    # Botón Reproducir
+    play_button = tk.Button(root, text="Reproducir", command=select_and_play, font=("Helvetica", 12), bg="#4CAF50",
+                            fg="white")
+    play_button.pack(pady=10)
+
+    # Botón Detener
+    stop_button = tk.Button(root, text="Detener", command=stop_playing, font=("Helvetica", 12), bg="#f44336", fg="white")
+    stop_button.pack(pady=5)
+
+    # Etiqueta de estado
+    status_label = tk.Label(root, text="Detenido", font=("Helvetica", 10), fg="blue")
+    status_label.pack(pady=10)
+
+    # Iniciar el bucle principal de Tkinter.
+    # Esto mantiene la ventana abierta y procesa los eventos de la UI.
     root.mainloop()
+

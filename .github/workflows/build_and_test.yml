@@ -33,6 +33,15 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Install System Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-tk libvlc-dev vlc
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest python-vlc  # Instalamos python-vlc explícitamente
+        if [ -f src/requirements.txt ]; then pip install -r src/requirements.txt; fi
     - name: Test with pytest
       working-directory: src
       run: |
