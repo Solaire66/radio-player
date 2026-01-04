@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: read
+  packages: write
 
 jobs:
   test_and_build:
@@ -48,3 +49,14 @@ jobs:
       run: |
         export PYTHONPATH=$PYTHONPATH:.
         pytest test_main.py
+    - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: ghcr.io/solaire66/radio-player:latest
